@@ -3,32 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OFFICIAL FAN CLUB | MOMO TRIBE</title>
-    <!-- ここに後でGTMのヘッドタグを入れます -->
+    <title>OFFICIAL FAN CLUB | BEYOND THE COMPASS</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: sans-serif; text-align: center; background-color: #000; color: #fff; }
-        header { padding: 20px; background-color: #222; }
-        nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        .hero { padding: 50px 20px; }
+        body { 
+            font-family: 'Noto Sans JP', sans-serif; 
+            text-align: center; 
+            background-color: #000; 
+            color: #fff; 
+            margin: 0; 
+            letter-spacing: 0.05em;
+        }
+        header { padding: 20px; background-color: #111; border-bottom: 1px solid #333; }
+        nav a { 
+            font-family: 'Montserrat', sans-serif;
+            color: #fff; 
+            margin: 0 15px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 13px; 
+            letter-spacing: 0.1em;
+        }
+        nav a:hover { color: #d94448; }
+        
+        .hero { 
+            padding: 100px 20px; 
+            background: radial-gradient(circle at center, #222 0%, #000 100%); 
+        }
+        h1 { 
+            font-family: 'Montserrat', sans-serif;
+            font-size: 56px; 
+            margin-bottom: 5px; 
+            letter-spacing: 4px; 
+            font-weight: 700;
+        }
+        .sub-title { 
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 18px; 
+            color: #d94448; 
+            margin-bottom: 40px; 
+            letter-spacing: 2px;
+        }
         .btn-join {
             display: inline-block;
-            background-color: #d94448; /* LDHっぽい赤 */
+            background-color: #d94448;
             color: #fff;
-            padding: 15px 40px;
+            padding: 20px 60px;
             text-decoration: none;
-            font-size: 20px;
-            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
             margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(217, 68, 72, 0.4);
         }
-        .footer { margin-top: 50px; padding: 20px; color: #777; }
+        .btn-join:hover { 
+            background-color: #fff; 
+            color: #d94448;
+            transform: translateY(-2px);
+        }
+        .content { padding: 60px 20px; }
+        h2 { font-family: 'Montserrat', sans-serif; font-size: 24px; border-bottom: 2px solid #d94448; display: inline-block; padding-bottom: 5px; margin-bottom: 30px; }
+        .footer { margin-top: 50px; padding: 40px; color: #555; font-size: 11px; border-top: 1px solid #111; letter-spacing: 1px; }
     </style>
 </head>
 <body>
-    <!-- ここに後でGTMのボディタグを入れます -->
-
     <header>
         <nav>
-            <!-- GTM研修の「リンククリック」練習用 -->
             <a href="#">NEWS</a>
             <a href="#">LIVE</a>
             <a href="#">MEDIA</a>
@@ -37,17 +81,21 @@
     </header>
 
     <div class="hero">
-        <h1>MOMO TRIBE <br>OFFICIAL FAN CLUB</h1>
-        <p>ここでしか見られない限定コンテンツを配信中！</p>
+        <h1>BEYOND THE COMPASS</h1>
+        <p class="sub-title">OFFICIAL FAN CLUB</p>
+        <p style="font-size: 1.1em; line-height: 2;">地図なき旅へ、君と共に。<br>限定コンテンツやチケット先行予約など特典満載！</p>
         
-        <!-- 【重要】GTMのトリガー設定練習用ボタン -->
-        <!-- Click Text: 「今すぐ入会する」 -->
-        <!-- Click Element (Class): btn-join -->
         <a href="thanks.html" class="btn-join" id="cv-button">今すぐ入会する</a>
     </div>
 
+    <div class="content">
+        <h2>LATEST NEWS</h2>
+        <p>2026.02.09　ドームツアー開催決定！</p>
+        <p>2026.02.01　New Single リリース記念イベントレポート</p>
+    </div>
+
     <div class="footer">
-        <p>&copy; 2025 MOMO TRIBE Project</p>
+        <p>&copy; 2026 BEYOND THE COMPASS Project</p>
     </div>
 </body>
 </html>
