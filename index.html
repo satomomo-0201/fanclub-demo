@@ -11,103 +11,173 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OFFICIAL FAN CLUB | BEYOND THE COMPASS</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
-    
+    <title>BEYOND THE COMPASS | OFFICIAL FAN CLUB</title>
     <style>
-        body { 
-            font-family: 'Noto Sans JP', sans-serif; 
-            text-align: center; 
-            background-color: #000; 
-            color: #fff; 
-            margin: 0; 
-            letter-spacing: 0.05em;
-        }
-        header { padding: 20px; background-color: #111; border-bottom: 1px solid #333; }
-        nav a { 
-            font-family: 'Montserrat', sans-serif;
-            color: #fff; 
-            margin: 0 15px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            font-size: 13px; 
-            letter-spacing: 0.1em;
-        }
+        /* 基本スタイル */
+        body { font-family: "Helvetica Neue", Arial, sans-serif; margin: 0; padding: 0; background-color: #111; color: #fff; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; padding: 0; }
+
+        /* ヘッダー */
+        header { background-color: #000; padding: 20px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: bold; color: #d94448; letter-spacing: 2px; }
+        nav a { margin-left: 20px; font-size: 14px; font-weight: bold; }
         nav a:hover { color: #d94448; }
-        
-        .hero { 
-            padding: 100px 20px; 
-            background: radial-gradient(circle at center, #222 0%, #000 100%); 
-        }
-        h1 { 
-            font-family: 'Montserrat', sans-serif;
-            font-size: 56px; 
-            margin-bottom: 5px; 
-            letter-spacing: 4px; 
-            font-weight: 700;
-        }
-        .sub-title { 
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 18px; 
-            color: #d94448; 
-            margin-bottom: 40px; 
-            letter-spacing: 2px;
-        }
-        .btn-join {
-            display: inline-block;
-            background-color: #d94448;
-            color: #fff;
-            padding: 20px 60px;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 50px;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(217, 68, 72, 0.4);
-        }
-        .btn-join:hover { 
-            background-color: #fff; 
-            color: #d94448;
-            transform: translateY(-2px);
-        }
-        .content { padding: 60px 20px; }
-        h2 { font-family: 'Montserrat', sans-serif; font-size: 24px; border-bottom: 2px solid #d94448; display: inline-block; padding-bottom: 5px; margin-bottom: 30px; }
-        .footer { margin-top: 50px; padding: 40px; color: #555; font-size: 11px; border-top: 1px solid #111; letter-spacing: 1px; }
+
+        /* ヒーローエリア */
+        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: radial-gradient(circle, #333 0%, #000 100%); }
+        .hero h1 { font-size: 60px; margin: 0; letter-spacing: 5px; }
+        .hero p { font-size: 18px; color: #ccc; margin-top: 10px; }
+        .btn-main { background-color: #d94448; color: #fff; padding: 15px 50px; border-radius: 30px; font-size: 18px; margin-top: 30px; display: inline-block; }
+        .btn-main:hover { background-color: #fff; color: #d94448; }
+
+        /* コンテンツ共通 */
+        section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; border-bottom: 1px solid #222; }
+        h2 { font-size: 30px; border-left: 5px solid #d94448; padding-left: 15px; margin-bottom: 40px; }
+
+        /* NEWSリスト（外部リンク計測用） */
+        .news-list li { margin-bottom: 15px; border-bottom: 1px dashed #333; padding-bottom: 10px; }
+        .news-date { color: #d94448; font-weight: bold; margin-right: 10px; }
+        .news-link { color: #ccc; }
+        .news-link:hover { color: #fff; text-decoration: underline; }
+
+        /* MOVIE（YouTube計測用） */
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        /* GOODS（Eコマース計測用） */
+        .goods-grid { display: flex; gap: 20px; flex-wrap: wrap; }
+        .goods-item { background: #222; padding: 20px; width: calc(33.333% - 20px); box-sizing: border-box; text-align: center; border-radius: 8px; }
+        .goods-name { font-weight: bold; margin: 10px 0; display: block; }
+        .goods-price { color: #d94448; font-size: 18px; margin-bottom: 15px; display: block; }
+        .btn-cart { background: #fff; color: #000; padding: 10px 20px; border-radius: 5px; font-size: 14px; cursor: pointer; border: none; }
+        .btn-cart:hover { background: #ccc; }
+
+        /* CONTACT（フォーム計測用） */
+        input, textarea { width: 100%; padding: 10px; margin-bottom: 20px; background: #333; border: 1px solid #555; color: #fff; }
+        .btn-submit { background-color: #d94448; color: #fff; border: none; padding: 10px 30px; font-size: 16px; cursor: pointer; }
+
+        /* フッター */
+        footer { text-align: center; padding: 50px 20px; font-size: 12px; color: #555; }
+        .sns-links a { margin: 0 10px; font-size: 16px; }
     </style>
+
+    <!-- カート追加イベントをデータレイヤーに送るためのスクリプト -->
+    <script>
+        function pushAddToCart(id, name, price, category) {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'add_to_cart',
+                'ecommerce': {
+                    'currency': 'JPY',
+                    'value': price,
+                    'items': [{
+                        'item_id': id,
+                        'item_name': name,
+                        'price': price,
+                        'item_category': category,
+                        'quantity': 1
+                    }]
+                }
+            });
+            alert('カートに追加しました（GTMのDataLayerにイベントを送信しました）');
+        }
+    </script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NTBC7RTG"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
     <header>
+        <div class="logo">BTC</div>
         <nav>
-            <a href="#">NEWS</a>
-            <a href="#">LIVE</a>
-            <a href="#">MEDIA</a>
-            <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+            <a href="#news">NEWS</a>
+            <a href="#movie">MOVIE</a>
+            <a href="#goods">GOODS</a>
+            <a href="#contact">CONTACT</a>
+            <!-- ログインイベント計測用 -->
+            <a href="#" id="login-btn" style="border: 1px solid #fff; padding: 5px 15px; border-radius: 4px;">LOGIN</a>
         </nav>
     </header>
 
     <div class="hero">
         <h1>BEYOND THE COMPASS</h1>
-        <p class="sub-title">OFFICIAL FAN CLUB</p>
-        <p style="font-size: 1.1em; line-height: 2;">地図なき旅へ、君と共に。<br>限定コンテンツやチケット先行予約など特典が満載！</p>
-        
-        <a href="thanks.html" class="btn-join" id="cv-button">今すぐ入会する</a>
+        <p>地図なき旅へ、君と共に。</p>
+        <!-- CVボタン -->
+        <a href="thanks.html" class="btn-main" id="cv-button">ファンクラブに入会する</a>
     </div>
 
-    <div class="content">
+    <!-- NEWSセクション：外部リンククリック計測の練習 -->
+    <section id="news">
         <h2>LATEST NEWS</h2>
-        <p>2026.02.09　ドームツアー開催決定！</p>
-        <p>2026.02.01　New Single リリース記念！イベントレポート</p>
+        <ul class="news-list">
+            <li><span class="news-date">2026.02.09</span><a href="https://twitter.com" target="_blank" class="news-link">公式Twitterを開設しました（外部サイトへの遷移計測）</a></li>
+            <li><span class="news-date">2026.02.01</span><a href="#" class="news-link">ドームツアー「THE BEGINNING」詳細発表</a></li>
+            <li><span class="news-date">2026.01.15</span><a href="#" class="news-link">New Single リリース記念イベントレポート</a></li>
+        </ul>
+    </section>
+
+    <!-- MOVIEセクション：YouTube動画計測の練習 -->
+    <section id="movie">
+        <h2>SPECIAL MOVIE</h2>
+        <div class="video-container">
+            <!-- YouTubeの埋め込みコード（enablejsapi=1 を付与済み） -->
+            <iframe src="https://www.youtube.com/embed/M7fi_IBsanc?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- GOODSセクション：Eコマース計測の練習 -->
+    <section id="goods">
+        <h2>OFFICIAL GOODS</h2>
+        <div class="goods-grid">
+            <!-- 商品1 -->
+            <div class="goods-item">
+                <span class="goods-name">ツアーTシャツ(黒)</span>
+                <span class="goods-price">¥4,500</span>
+                <!-- クリックするとJS関数が動いてdataLayerに情報を送る -->
+                <button class="btn-cart" onclick="pushAddToCart('SKU_001', 'Tour T-Shirt Black', 3500, 'Apparel')">カートに入れる</button>
+            </div>
+            <!-- 商品2 -->
+            <div class="goods-item">
+                <span class="goods-name">マフラータオル</span>
+                <span class="goods-price">¥2,000</span>
+                <button class="btn-cart" onclick="pushAddToCart('SKU_002', 'Muffler Towel', 2000, 'Goods')">カートに入れる</button>
+            </div>
+            <!-- 商品3 -->
+            <div class="goods-item">
+                <span class="goods-name">ペンライト</span>
+                <span class="goods-price">¥5,000</span>
+                <button class="btn-cart" onclick="pushAddToCart('SKU_003', 'Penlight', 4500, 'Goods')">カートに入れる</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTセクション：フォーム入力の練習（見た目だけ） -->
+    <section id="contact">
+        <h2>CONTACT</h2>
+        <form onsubmit="alert('送信イベントの練習用です'); return false;">
+            <input type="text" placeholder="お名前">
+            <input type="email" placeholder="メールアドレス">
+       “     <textarea rows="5" placeholder="お問い合わせ内容"></textarea>
+            <button type="submit" class="btn-submit" id="contact-submit">送信する</button>
+        </form>
+    </section>
+
+    <!-- スクロール計測用に余白を追加 -->
+    <div style="height: 1000px; background: linear-gradient(to bottom, #111, #000); display: flex; justify-content: center; align-items: center; color: #333;">
+        <p>（スクロール率計測エリア 50%... 90%...）</p>
     </div>
 
-    <div class="footer">
+    <footer>
+        <div class="sns-links">
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+        </div>
         <p>&copy; 2026 BEYOND THE COMPASS Project</p>
-    </div>
+    </footer>
+
 </body>
 </html>
