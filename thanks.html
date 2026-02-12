@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NTBC7RTG');</script>
+<!-- End Google Tag Manager -->
+
+    <!-- 【最重要】データレイヤーへの購入情報プッシュ -->
+    <!-- 通常、この部分はシステムのバックエンドから動的に出力されますが、練習用に固定値で記述しています -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'event': 'purchase',           // GTMのトリガーになるイベント名
+        'ecommerce': {
+            'transaction_id': 'T-' + Math.floor(Math.random() * 100000), // ランダムな注文ID
+            'value': 5500,             // 合計金額
+            'currency': 'JPY',
+            'items': [
+                {
+                    'item_id': 'MEM_001',
+                    'item_name': 'Annual Membership',
+                    'price': 5500,
+                    'quantity': 1
+                }
+            ]
+        },
+        'user_data': {                 // ユーザー属性（会員ランクなど）
+            'user_id': 'U-99999',
+            'membership_tier': 'premium'
+        }
+      });
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOIN COMPLETE | BEYOND THE COMPASS</title>
+    <style>
+        body { font-family: "Helvetica Neue", Arial, sans-serif; text-align: center; background-color: #000; color: #fff; padding-top: 100px; }
+        .message-box { border: 1px solid #333; padding: 60px 40px; display: inline-block; max-width: 600px; background: linear-gradient(145deg, #111 0%, #050505 100%); border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        h1 { color: #d94448; font-size: 36px; margin-bottom: 30px; letter-spacing: 2px; }
+        p { line-height: 2; color: #ccc; }
+        .member-id { font-family: monospace; font-size: 32px; font-weight: bold; margin: 20px 0; color: #fff; background: #222; padding: 10px 20px; display: inline-block; border-radius: 5px; }
+        .btn-back { display: inline-block; margin-top: 40px; color: #888; text-decoration: none; border: 1px solid #555; padding: 10px 20px; border-radius: 30px; transition: 0.3s; }
+        .btn-back:hover { background: #fff; color: #000; }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NTBC7RTG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <div class="message-box">
+        <h1>WELCOME TO THE FELLOWS</h1>
+        <p>「BEYOND THE COMPASS」への入会ありがとうございます。<br>
+        これからは同じ船のcrewとして、共に旅を続けましょう。</p>
+
+        <p style="font-size: 12px; color: #666; margin-top: 30px;">YOUR MEMBERSHIP ID</p>
+        <div class="member-id">BC-00267</div>
+
+        <p style="font-size: 14px; color: #d94448;">※購入データが送信されました</p>
+    </div>
+
+    <br>
+    <a href="index.html" class="btn-back">TOP PAGEへ戻る</a>
+
+</body>
+</html>
